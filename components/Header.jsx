@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Search from './Search';
 
 export default function Header() {
   return (
@@ -11,9 +12,9 @@ export default function Header() {
         </label>
 
         <ul className="menu__box">
-          <li><Link className="menu__item" href="#">Buscador</Link></li>
-          <li><Link className="menu__item" href="#">Categorias</Link></li>
-          <li><Link className="menu__item" href="#">Recetas</Link></li>
+          <li><Search className="menu__item" /></li>
+          <li><Link className="menu__item" href="/categories">Categorias</Link></li>
+          <li><Link className="menu__item" href="/recipes">Recetas</Link></li>
           <li><Link className="menu__item" href="#">Utensilios</Link></li>
         </ul>
       </div>
