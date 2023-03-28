@@ -1,3 +1,5 @@
+import { Client } from "@notionhq/client";
+
 export async function getAllCategories(limit) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
