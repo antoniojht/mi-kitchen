@@ -3,7 +3,7 @@ import Search from './Search';
 
 export default function Header() {
   return (
-    <header className="h-16 bg-slate-50 drop-shadow-lg gap-3 flex items-center px-8">
+    <header className="h-16 bg-slate-50 drop-shadow-lg flex items-center justify-center px-8">
 
       <div className="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
