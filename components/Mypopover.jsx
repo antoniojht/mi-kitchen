@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function MyPopover({ title, children }) {
   return (
-    <Popover className="relative">
+    <Popover className="relative mb-9 -z-10">
       <Popover.Button
         className={
           "flex items-center rounded-md border-black px-3 py-2 text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
@@ -20,7 +20,7 @@ export default function MyPopover({ title, children }) {
         />
       </Popover.Button>
 
-      <Popover.Panel className="absolute z-10 bg-white rounded-lg shadow-md p-4">
+      <Popover.Panel className="absolute z-10 bg-white rounded-lg shadow-md p-5">
         {children}
       </Popover.Panel>
     </Popover>

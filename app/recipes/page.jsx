@@ -7,6 +7,7 @@ import Pagination from "@/components/Pagination";
 import Card from '@/components/Card';
 import { DIFFICULTY } from '@/shared/consts/difficulty.consts';
 import MyPopover from '@/components/Mypopover';
+import Grid from '@/components/Grid';
 
 export default function Recipes() {
   const [categories, setCategories] = useState([]);
@@ -123,24 +124,7 @@ export default function Recipes() {
         </div>
       </MyPopover>
 
-      <div>
-        {!recipes.results ? (
-          <h1>Loading...</h1>
-        ) : (
-          recipes.results.map((recipe) => {
-            return (
-              <Card
-                key={recipe.id}
-                title={`${recipe.properties.Name.title[0].text.content}`}
-                src={`${recipe.cover.file.url}`}
-                slug={`/recipes/${recipe.id}`}
-                difficult={recipe.properties.Dificultad.select.name}
-                totalTime={recipe.properties.Tiempo_total.number}
-              />
-            );
-          })
-        )}
-      </div>
+      <Grid recipes={recipes} />
       {recipes.next_cursor ? <Pagination /> : null}
     </>
   );
