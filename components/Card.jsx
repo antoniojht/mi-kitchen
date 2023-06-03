@@ -5,7 +5,7 @@ export default function Card({ title, src, difficult, totalTime, slug }) {
   return (
     <Link
       href={slug}
-      className="rounded-lg drop-shadow-md"
+      className="rounded-lg drop-shadow-md -z-10"
     >
       <div className="bg-white border rounded-lg overflow-hidden">
         <Image

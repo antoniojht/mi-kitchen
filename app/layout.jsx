@@ -10,8 +10,8 @@ export default function RootLayout({
     <html lang="es">
       <head />
       <body>
-        <Header />
         <Blobs>
+          <Header />
           <main className='px-6 py-8 min-h-screen'>{children}</main>
         </Blobs>
       </body>
