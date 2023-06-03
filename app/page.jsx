@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Grid from '@/components/Grid';
 import { getRecipes } from '@/services/getRecipes';
+import '../styles/globals.css'
 
 export const metadata = {
   title: 'miKitchen Blog',
@@ -14,7 +15,7 @@ export default async function Home() {
     <>
       <h1 className="text-5xl font-bold text-center">Bienvenido a miKitchen!</h1>
       <section>
-        <h2 className="text-3xl font-bold mb-4 mt-5">
+        <h2 className="text-3xl font-bold mb-4 mt-5 welcome-gradient">
           Échale un vistazo a nuestra última receta
         </h2>
         <article>
@@ -40,7 +41,7 @@ export default async function Home() {
       </section>
       <section>
         <article>
-          <h2 className="text-3xl font-bold mb-4 mt-5">Recetas más visitadas</h2>
+          <h2 className="text-3xl font-bold mb-4 mt-5 welcome-gradient">Recetas más visitadas</h2>
           <Grid recipes={recipes} />
         </article>
       </section>
