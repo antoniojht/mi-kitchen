@@ -2,7 +2,7 @@ import '../styles/blobs.css'
 
 export default function Blobs({ children }) {
   return (
-    <div className="container">
+    <>
       <div className="blob-c">
         <div className="shape-blob"></div>
         <div className="shape-blob one"></div>
@@ -13,6 +13,6 @@ export default function Blobs({ children }) {
         <div className="shape-blob six"></div>
       </div>
       {children}
-    </div>
+    </>
   )
 }
