@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Grid from '@/components/Grid';
-import { getRecipes } from '@/services/getRecipes';
+import { getRecipes } from '@/services/repository/getRecipes';
 import '../styles/globals.css'
 
 export const metadata = {

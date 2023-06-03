@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getRecipeInfo } from '@/services/getRecipe';
+import { getRecipeInfo } from '@/services/repository/recipe/getRecipe';
 
 export default async function Recipe({ params }) {
   const { id } = params;

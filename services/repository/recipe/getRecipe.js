@@ -1,7 +1,7 @@
-import { getPageInfo } from '@/repositories/page/getPage';
-import { TYPE_RECIPE } from '@/shared/consts';
+import { getPageInfo } from '@/services/datasource/page/getPage';
+import { TYPE_RECIPE } from '@/shared/consts/type-recipe.consts';
 
-const { getRecipe } = require('@/repositories/recipes/getRecipe');
+const { getRecipe } = require('@/services/datasource/recipes/getRecipe');
 
 export async function getRecipeInfo(id) {
   const recipe = await getRecipe(id);

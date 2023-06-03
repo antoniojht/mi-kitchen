@@ -5,9 +5,8 @@ import MyListbox from "@/components/Listbox";
 import Range from "@/components/Range";
 import Pagination from "@/components/Pagination";
 import Card from '@/components/Card';
-import { DIFFICULTY } from '@/shared/difficulty.consts';
+import { DIFFICULTY } from '@/shared/consts/difficulty.consts';
 import MyPopover from '@/components/Mypopover';
-import { getCategories } from '@/services/getCategories';
 
 export default function Recipes() {
   const [categories, setCategories] = useState([]);
@@ -17,7 +16,6 @@ export default function Recipes() {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
-    getCategories().then(items => console.log(items))
     fetch("api/categories")
       .then((res) => res.json())
       .then((resultsFromApi) => {

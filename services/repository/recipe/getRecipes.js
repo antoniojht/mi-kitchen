@@ -1,4 +1,4 @@
-const { getAllRecipes } = require('@/repositories/recipes/getAllRecipes');
+const { getAllRecipes } = require('@/services/datasource/recipes/getAllRecipes');
 
 export async function getRecipes(limit) {
   const recipes = await getAllRecipes(limit);

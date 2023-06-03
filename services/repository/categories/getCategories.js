@@ -1,4 +1,4 @@
-import { getAllCategories } from '@/repositories/categories/getAllCategories';
+import { getAllCategories } from '@/services/datasource/categories/getAllCategories';
 
 export async function getCategories(limit = 100) {
   const categories = await getAllCategories(limit);
