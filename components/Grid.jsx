@@ -1,9 +1,8 @@
 import Card from './Card';
-import style from '../styles/Grid.module.css';
 
 export default function Grid({ recipes }) {
   return (
-    <div className={style.grid}>
+    <div className="grid">
       {
         recipes.map((recipe) =>
           <Card

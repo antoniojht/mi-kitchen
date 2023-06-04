@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import MyListbox from "@/components/Listbox";
 import Range from "@/components/Range";
 import Pagination from "@/components/Pagination";
-import Card from '@/components/Card';
 import { DIFFICULTY } from '@/shared/consts/difficulty.consts';
 import MyPopover from '@/components/Mypopover';
 import Grid from '@/components/Grid';

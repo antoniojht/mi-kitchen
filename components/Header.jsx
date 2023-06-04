@@ -13,7 +13,7 @@ export default function Header() {
 
         <ul className="menu__box">
           <li><Search className="menu__item" /></li>
-          <li><Link className="menu__item" href="/categories">Categorias</Link></li>
+          <li><Link className="menu__item" href="/categories">Categorías</Link></li>
           <li><Link className="menu__item" href="/recipes">Recetas</Link></li>
           <li><Link className="menu__item" href="#">Utensilios</Link></li>
         </ul>
