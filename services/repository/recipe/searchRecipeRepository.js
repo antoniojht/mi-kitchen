@@ -1,7 +1,7 @@
-import { getRecipesFilterCategory } from '@/services/datasource/recipes/getRecipesByCategory';
+import { searchRecipeDataSource } from '@/services/datasource/recipes/searchRecipe';
 
-export async function getRecipesByCategory(category) {
-  const recipes = await getRecipesFilterCategory(category)
+export async function searchRecipeRepository(query) {
+  const recipes = await searchRecipeDataSource(query);
 
   return recipes.map(recipe => {
     return {

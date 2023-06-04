@@ -110,7 +110,7 @@ export default function Recipes() {
           </div>
           <div className="mb-4">
             <span>
-              <b>Categoria</b>
+              <b>Categoría</b>
             </span>
             <MyListbox list={categories} getSelected={handleCategory} />
           </div>

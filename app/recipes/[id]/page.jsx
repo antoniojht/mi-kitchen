@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { getRecipeInfo } from '@/services/repository/recipe/getRecipe';
+import { getRecipeInfoRepository } from '@/services/repository/recipe/getRecipeRepository';
 
 export default async function Recipe({ params }) {
   const { id } = params;
 
-  const recipeInfo = await getRecipeInfo(id)
+  const recipeInfo = await getRecipeInfoRepository(id)
 
   return (
     <article>

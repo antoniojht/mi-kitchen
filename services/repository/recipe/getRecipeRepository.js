@@ -3,7 +3,7 @@ import { TYPE_RECIPE } from '@/shared/consts/type-recipe.consts';
 
 const { getRecipe } = require('@/services/datasource/recipes/getRecipe');
 
-export async function getRecipeInfo(id) {
+export async function getRecipeInfoRepository(id) {
   const recipe = await getRecipe(id);
   const metadata = await getPageInfo(id);
 

@@ -1,7 +1,7 @@
-const { getAllRecipes } = require('@/services/datasource/recipes/getAllRecipes');
+import { filterRecipes } from '@/services/datasource/recipes/getFilterRecipes';
 
-export async function getRecipes(limit) {
-  const recipes = await getAllRecipes(limit);
+export async function getRecipesFilterRepository(body) {
+  const recipes = await filterRecipes(body);
 
   return recipes.map(recipe => {
     return {

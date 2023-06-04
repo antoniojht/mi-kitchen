@@ -1,8 +1,8 @@
-import { getCategories } from '@/services/repository/categories/getCategories'
+import { getCategoriesRepository } from '@/services/repository/categories/getCategoriesRepository'
 import Link from 'next/link';
 
 export default async function Categories() {
-  const categories = await getCategories();
+  const categories = await getCategoriesRepository();
 
   return (
     <>

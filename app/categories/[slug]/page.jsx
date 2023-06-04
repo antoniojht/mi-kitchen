@@ -1,9 +1,9 @@
 import Grid from '@/components/Grid';
-import { getRecipesByCategory } from '@/services/repository/recipe/getRecipesByCategoryName';
-import { getCategories } from '@/services/repository/categories/getCategories';
+import { getRecipesByCategoryRepository } from '@/services/repository/recipe/getRecipesByCategoryRepository';
+import { getCategoriesRepository } from '@/services/repository/categories/getCategoriesRepository';
 
 export default async function Recipes({ params }) {
-  const recipes = await getRecipesByCategory(params.slug);
+  const recipes = await getRecipesByCategoryRepository(params.slug);
 
   return (
     <>
@@ -14,7 +14,7 @@ export default async function Recipes({ params }) {
 }
 
 export async function generateStaticParams() {
-  const categories = await getCategories();
+  const categories = await getCategoriesRepository();
 
   return categories.map((category) => {
     return {

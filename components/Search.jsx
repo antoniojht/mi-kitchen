@@ -35,7 +35,7 @@ export default function Search() {
         <Combobox.Options className="absolute z-[2] w-full overflow-hidden bg-white rounded-t-none shadow-lg rounded-md list-none p-3 cursor-pointer">
           {results.map((recipe) => (
             <Combobox.Option key={recipe.id} value={recipe} className="p-1 hover:bg-slate-200">
-              {recipe.properties.Name.title[0].text.content}
+              {recipe.title}
             </Combobox.Option>
           ))}
         </Combobox.Options>

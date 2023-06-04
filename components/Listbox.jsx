@@ -50,7 +50,7 @@ export default function MyListbox({ list, getSelected }) {
                   {({ selected }) => (
                     <>
                       <span
-                        className={`block truncate ${selected ? "font-medium" : "font-normal"
+                        className={`block capitalize truncate ${selected ? "font-medium" : "font-normal"
                           }`}
                       >
                         {element.name}
