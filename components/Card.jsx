@@ -5,7 +5,7 @@ export default function Card({ title, src, difficult, totalTime, slug }) {
   return (
     <Link
       href={slug}
-      className="rounded-lg drop-shadow-md -z-10"
+      className="rounded-lg drop-shadow-md"
     >
       <div className="bg-white border rounded-lg overflow-hidden">
         <Image
@@ -15,7 +15,7 @@ export default function Card({ title, src, difficult, totalTime, slug }) {
           fill={true}
         />
       </div>
-      <div className="z-2 relative mt-24 top-16">
+      <div className="z-10 relative mt-24 top-16">
         <div className="text-gray-600 font-semibold tracking-wide text-xs uppercase">
           {totalTime} minutos &bull; {difficult}
         </div>

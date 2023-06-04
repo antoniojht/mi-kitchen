@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import { Popover } from "@headlessui/react";
 import MyListbox from "@/components/Listbox";
 import Range from "@/components/Range";
 import Pagination from "@/components/Pagination";
@@ -119,7 +120,9 @@ export default function Recipes() {
             </span>
             <MyListbox list={DIFFICULTY} getSelected={handleDificulty} />
           </div>
-          <button onClick={handleRecipes}>Aplicar</button>
+          <Popover.Button onClick={handleRecipes}>
+            Aplicar
+          </Popover.Button>
         </div>
       </MyPopover>
 

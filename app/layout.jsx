@@ -1,7 +1,10 @@
 import Blobs from '@/components/Blob';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import '@/styles/globals.css'
-import '@/styles/header.css'
+import '@/styles/globals.css';
+import '@/styles/header.css';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export default function RootLayout({
   children,
@@ -12,7 +15,10 @@ export default function RootLayout({
       <body>
         <Blobs>
           <Header />
-          <main className='px-6 py-8 min-h-screen'>{children}</main>
+          <Suspense fallback={<Loading />}>
+            <main className='px-6 py-8 min-h-screen'>{children}</main>
+          </Suspense>
+          <Footer />
         </Blobs>
       </body>
     </html>
