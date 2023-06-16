@@ -1,9 +1,10 @@
+import { Analytics } from '@vercel/analytics/react';
+import { Suspense } from 'react';
 import Blobs from '@/components/Blob';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import '@/styles/globals.css';
 import '@/styles/header.css';
-import { Suspense } from 'react';
 import Loading from './loading';
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
           </Suspense>
           <Footer />
         </Blobs>
+        <Analytics />
       </body>
     </html>
   );
