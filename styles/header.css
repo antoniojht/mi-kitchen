@@ -81,9 +81,12 @@
 
 .menu__item {
   display: block;
-  padding: 12px 24px;
+  padding: 12px 36px;
 
   color: #333;
 
   transition-duration: .25s;
+}
+.menu__item:first-child {
+  margin-top: 16px
 }
