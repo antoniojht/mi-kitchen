@@ -28,6 +28,7 @@ export default async function Recipe({ params }) {
           src={recipeInfo.cover}
           alt={`Image for ${recipeInfo.time}`}
           fill
+          sizes="(min-width: 66em) 33vw, (min-width: 44em) 50vw, 100vw"
           className="w-full h-[60%] top-0 left-0 object-cover rounded-2xl -z-10"
           priority={true}
         />
