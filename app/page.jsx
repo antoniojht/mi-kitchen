@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Grid from '@/components/Grid';
 import { getRecipesRepository } from '@/services/repository/recipe/getRecipesRepository';
 import '../styles/globals.css';
@@ -26,6 +27,9 @@ export default async function Home() {
           Échale un vistazo a nuestra última receta
         </h2>
         <article className='flex flex-col items-center'>
+          <Link
+            href={`/recipes/${mainRecipe.id}`}
+          >
           <Image
             src={`${mainRecipe.image}`}
             width="0"
@@ -43,7 +47,8 @@ export default async function Home() {
             <p>
               Tiempo: {`${mainRecipe.totalTime}`}
             </p>
-          </div>
+            </div>
+          </Link>
         </article>
       </section>
       <section>

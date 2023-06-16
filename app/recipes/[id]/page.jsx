@@ -23,24 +23,23 @@ export default async function Recipe({ params }) {
   return (
     <article>
       <h1 className="text-5xl font-bold text-center mb-9">{recipeInfo.title}</h1>
-      <div className='w-full relative pt-[100%]'>
+      <div className='w-full relative flex justify-center'>
         <Image
           src={recipeInfo.cover}
           alt={`Image for ${recipeInfo.time}`}
-          fill
           sizes="(min-width: 66em) 33vw, (min-width: 44em) 50vw, 100vw"
-          className="w-full h-[60%] top-0 left-0 object-cover rounded-2xl -z-10"
+          width="0"
+          height="0"
+          className="w-full max-w-4xl object-cover"
           priority={true}
         />
       </div>
-      <div className="mt-2">
+      <section className="mt-2 flex flex-col items-center">
         <div className="text-gray-600 font-semibold tracking-wide text-xs uppercase">
           <p>&bull; Cocción:{recipeInfo.time.cooking} minutos </p>
           <p>&bull; Preparación:{recipeInfo.time.elaborate} minutos</p>
           <p>&bull; Dificultad: {recipeInfo.difficulty}</p>
         </div>
-      </div>
-      <section>
         <h2 className="text-3xl font-bold mb-9 mt-9">Ingredientes</h2>
         <ul>
           {
@@ -53,15 +52,13 @@ export default async function Recipe({ params }) {
             })
           }
         </ul>
-      </section>
-      <section>
         <h2 className="text-3xl font-bold mb-9 mt-9">Preparación</h2>
-        <ol className='pl-4'>
+        <ol className='pl-4 max-w-[720px]'>
           {
             recipeInfo.steps.map((step) => {
               return (
                 // TODO: Change img to Image component
-                <li className={`mb-3 ${step.type === 'text' ? 'list-decimal' : null}`}>
+                <li className={`mb-3 ${step.type === 'text' ? 'list-decimal' : 'flex justify-center'}`}>
                   {step.type === 'image' ? <img src={step.content} /> : step.content}
                 </li>
               )
