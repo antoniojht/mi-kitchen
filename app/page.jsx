@@ -5,6 +5,13 @@ import '../styles/globals.css';
 
 export const metadata = {
   title: 'miKitchen Blog',
+  description: 'Blog sobre recetas de cocina, consejos, y otros temas relacionados con este mundo.',
+  keywords: 'recetas de cocina, cocina casera, postres, comida saludable',
+  author: 'Antonio José Herrera Tabaco',
+  openGraph: {
+    title: 'miKitchen Blog',
+    description: 'Blog sobre recetas de cocina, consejos, y otros temas relacionados con este mundo.',
+  },
 };
 
 export default async function Home() {

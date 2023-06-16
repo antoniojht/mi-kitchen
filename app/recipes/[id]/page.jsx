@@ -1,6 +1,20 @@
 import Image from 'next/image';
 import { getRecipeInfoRepository } from '@/services/repository/recipe/getRecipeRepository';
 
+export async function generateMetadata({ params }) {
+  const { id } = params
+
+  const recipe = await getRecipeInfoRepository(id)
+
+  return {
+    title: recipe.title,
+    description: `Receta detallada paso a paso con ingredientes y cantidades de ${recipe.title}`,
+    openGraph: {
+      images: [recipe.cover],
+    },
+  }
+}
+
 export default async function Recipe({ params }) {
   const { id } = params;
 

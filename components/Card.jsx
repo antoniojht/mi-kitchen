@@ -11,6 +11,7 @@ export default function Card({ title, src, difficult, totalTime, slug }) {
         <Image
           src={src}
           alt={`Image for ${title}`}
+          sizes="(min-width: 66em) 33vw, (min-width: 44em) 50vw, 100vw"
           className="object-center object-cover w-full rounded-lg"
           fill={true}
         />
