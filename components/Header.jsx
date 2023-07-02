@@ -1,8 +1,12 @@
-'use client'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+
+'use client';
 
 import Link from 'next/link';
-import Search from './Search';
 import { useRef } from 'react';
+import Search from './Search';
 
 export default function Header() {
   const menuToggleRef = useRef(null);
@@ -17,7 +21,7 @@ export default function Header() {
       <div className="hamburger-menu">
         <input id="menu__toggle" type="checkbox" ref={menuToggleRef} />
         <label className="menu__btn" htmlFor="menu__toggle">
-          <span></span>
+          <span />
         </label>
 
         <ul className="menu__box">
@@ -28,10 +32,10 @@ export default function Header() {
         </ul>
       </div>
 
-
       <Link href="/">
-        <b className="font-extrabold">mi</b>Kitchen
+        <b className="font-extrabold">mi</b>
+        Kitchen
       </Link>
     </header>
-  )
+  );
 }

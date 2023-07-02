@@ -1,6 +1,9 @@
-"use client";
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-sequences */
 
-import { useState } from "react";
+'use client';
+
+import { useState } from 'react';
 
 export default function Range({ getRange }) {
   const [value, setValue] = useState(0);
@@ -21,7 +24,12 @@ export default function Range({ getRange }) {
           setValue(e.target.value), handleChange(e);
         }}
       />
-      <output id="value">Máx. {value}min</output>
+      <output id="value">
+        Máx.
+        {' '}
+        {value}
+        min
+      </output>
     </>
   );
 }

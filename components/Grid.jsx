@@ -4,7 +4,7 @@ export default function Grid({ recipes }) {
   return (
     <div className="grid">
       {
-        recipes.map((recipe) =>
+        recipes.map((recipe) => (
           <Card
             key={recipe.id}
             title={recipe.title}
@@ -12,8 +12,9 @@ export default function Grid({ recipes }) {
             slug={`/recipes/${recipe.id}`}
             difficult={recipe.dificulty}
             totalTime={recipe.totalTime}
-          />)
+          />
+        ))
       }
     </div>
-  )
-};
+  );
+}
