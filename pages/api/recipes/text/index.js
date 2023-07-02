@@ -2,7 +2,7 @@ import { searchRecipeRepository } from '@/services/repository/recipe/searchRecip
 
 export default async function handler(req, res) {
   const { query = {} } = req;
-  const { q = "" } = query;
+  const { q = '' } = query;
 
   const recipes = await searchRecipeRepository(q);
 

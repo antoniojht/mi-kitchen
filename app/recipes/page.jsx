@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from "react";
-import { Popover } from "@headlessui/react";
-import MyListbox from "@/components/Listbox";
-import Range from "@/components/Range";
-import Pagination from "@/components/Pagination";
+import { useEffect, useState } from 'react';
+import { Popover } from '@headlessui/react';
+import MyListbox from '@/components/Listbox';
+import Range from '@/components/Range';
+import Pagination from '@/components/Pagination';
 import { DIFFICULTY } from '@/shared/consts/difficulty.consts';
 import MyPopover from '@/components/Mypopover';
 import Grid from '@/components/Grid';
@@ -13,11 +13,11 @@ export default function Recipes() {
   const [categories, setCategories] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [range, setRange] = useState(0);
-  const [dificulty, setDificulty] = useState("");
-  const [category, setCategory] = useState("");
+  const [dificulty, setDificulty] = useState('');
+  const [category, setCategory] = useState('');
 
   useEffect(() => {
-    fetch("api/categories")
+    fetch('api/categories')
       .then((res) => res.json())
       .then((resultsFromApi) => {
         setCategories(resultsFromApi);
@@ -25,9 +25,9 @@ export default function Recipes() {
   }, []);
 
   useEffect(() => {
-    fetch("api/recipes/filter", {
-      method: "POST",
-      cache: "no-store",
+    fetch('api/recipes/filter', {
+      method: 'POST',
+      cache: 'no-store',
     })
       .then((res) => res.json())
       .then((resultsFromApi) => {
@@ -35,25 +35,25 @@ export default function Recipes() {
       });
   }, []);
 
-  const handleCategory = (category) => {
-    setCategory(category);
+  const handleCategory = (categoryRes) => {
+    setCategory(categoryRes);
   };
 
-  const handleDificulty = (dificulty) => {
-    setDificulty(dificulty);
+  const handleDificulty = (dificultyRes) => {
+    setDificulty(dificultyRes);
   };
 
-  const handleRange = (range) => {
-    setRange(range);
+  const handleRange = (rangeRes) => {
+    setRange(rangeRes);
   };
 
   const handleRecipes = () => {
     const filters = {
       and: [
         {
-          property: "Tags",
+          property: 'Tags',
           status: {
-            equals: "Done",
+            equals: 'Done',
           },
         },
       ],
@@ -61,7 +61,7 @@ export default function Recipes() {
 
     if (category.length > 0) {
       filters.and.push({
-        property: "Select",
+        property: 'Select',
         multi_select: {
           contains: category,
         },
@@ -70,7 +70,7 @@ export default function Recipes() {
 
     if (dificulty.length > 0) {
       filters.and.push({
-        property: "Dificultad",
+        property: 'Dificultad',
         select: {
           equals: dificulty,
         },
@@ -79,17 +79,17 @@ export default function Recipes() {
 
     if (range > 0) {
       filters.and.push({
-        property: "Tiempo_total",
+        property: 'Tiempo_total',
         number: {
           less_than_or_equal_to: Number(range),
         },
       });
     }
 
-    fetch("/api/recipes/filter", {
-      method: "POST",
+    fetch('/api/recipes/filter', {
+      method: 'POST',
       body: JSON.stringify(filters),
-      cache: "no-store",
+      cache: 'no-store',
     })
       .then((res) => res.json())
       .then((resultFromApi) => {
@@ -100,7 +100,7 @@ export default function Recipes() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-4">Recetas</h1>
-      <MyPopover title={"Filtros"}>
+      <MyPopover title="Filtros">
         <div>
           <div className="mb-4">
             <span>

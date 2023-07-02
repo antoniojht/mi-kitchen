@@ -1,10 +1,14 @@
-"use client";
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-sequences */
 
-import { useState, Fragment } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+'use client';
 
-const listBoxOptions = [{ name: "Seleccione una opción..." }];
+import { useState, Fragment } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import { ChevronUpDownIcon } from '@heroicons/react/20/solid';
+
+const listBoxOptions = [{ name: 'Seleccione una opción...' }];
 
 export default function MyListbox({ list, getSelected }) {
   const [selected, setSelected] = useState(listBoxOptions[0]);
@@ -41,21 +45,19 @@ export default function MyListbox({ list, getSelected }) {
               {list.map((element, elementIdx) => (
                 <Listbox.Option
                   key={elementIdx}
-                  className={({ active }) =>
-                    `relative list-none cursor-default select-none py-2 pr-4 ${active ? "bg-amber-100 text-gray-900" : "text-gray-900"
-                    }`
-                  }
+                  className={({ active }) => `relative list-none cursor-default select-none py-2 pr-4 ${active ? 'bg-amber-100 text-gray-900' : 'text-gray-900'
+                    // eslint-disable-next-line indent
+                    }`}
                   value={element}
                 >
-                  {({ selected }) => (
-                    <>
-                      <span
-                        className={`block capitalize truncate ${selected ? "font-medium" : "font-normal"
-                          }`}
-                      >
-                        {element.name}
-                      </span>
-                    </>
+                  {({ selectedListElement }) => (
+                    <span
+                      className={`block capitalize truncate ${selectedListElement ? 'font-medium' : 'font-normal'
+                        // eslint-disable-next-line indent
+                        }`}
+                    >
+                      {element.name}
+                    </span>
                   )}
                 </Listbox.Option>
               ))}

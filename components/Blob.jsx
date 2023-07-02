@@ -1,18 +1,18 @@
-import '../styles/blobs.css'
+import '../styles/blobs.css';
 
 export default function Blobs({ children }) {
   return (
     <>
       <div className="blob-c">
-        <div className="shape-blob"></div>
-        <div className="shape-blob one"></div>
-        <div className="shape-blob two"></div>
-        <div className="shape-blob three"></div>
-        <div className="shape-blob four"></div>
-        <div className="shape-blob five"></div>
-        <div className="shape-blob six"></div>
+        <div className="shape-blob" />
+        <div className="shape-blob one" />
+        <div className="shape-blob two" />
+        <div className="shape-blob three" />
+        <div className="shape-blob four" />
+        <div className="shape-blob five" />
+        <div className="shape-blob six" />
       </div>
       {children}
     </>
-  )
+  );
 }

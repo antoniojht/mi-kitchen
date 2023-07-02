@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Combobox } from "@headlessui/react";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Combobox } from '@headlessui/react';
 
 export default function Search() {
   const router = useRouter();

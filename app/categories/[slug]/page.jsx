@@ -7,7 +7,11 @@ export default async function Recipes({ params }) {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-9">Recetas de <span className='welcome-gradient'>{params.slug}</span></h1>
+      <h1 className="text-3xl font-bold mb-9">
+        Recetas de
+        {' '}
+        <span className="welcome-gradient">{params.slug}</span>
+      </h1>
       <Grid recipes={recipes} />
     </>
   );
@@ -16,9 +20,7 @@ export default async function Recipes({ params }) {
 export async function generateStaticParams() {
   const categories = await getCategoriesRepository();
 
-  return categories.map((category) => {
-    return {
-      slug: category.name
-    }
-  })
+  return categories.map((category) => ({
+    slug: category.name,
+  }));
 }

@@ -4,5 +4,5 @@ export default function Pagination() {
       <p>Siguiente</p>
       <p>Atrás</p>
     </>
-  )
+  );
 }
