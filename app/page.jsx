@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { headers } from 'next/headers';
 import Grid from '@/components/Grid';
-import { getRecipesRepository } from '@/services/repository/recipe/getRecipesRepository';
 import '../styles/globals.css';
 
 export const metadata = {
@@ -15,8 +15,15 @@ export const metadata = {
   },
 };
 
+async function getRecipes() {
+  const host = headers().get('host');
+  const recipes = await fetch(`http://${host}/api/recipes/all`, { next: { revalidate: 10000 } });
+
+  return recipes.json();
+}
+
 export default async function Home() {
-  const recipes = await getRecipesRepository(7);
+  const recipes = await getRecipes(7);
   const mainRecipe = recipes.shift();
 
   return (
