@@ -17,7 +17,7 @@ export const metadata = {
 
 async function getRecipes() {
   const host = headers().get('host');
-  const recipes = await fetch(`http://${host}/api/recipes/all`, { next: { revalidate: 10000 } });
+  const recipes = await fetch(`http://${host}/api/recipes/all`, { next: { revalidate: 10 } });
 
   return recipes.json();
 }
