@@ -10,7 +10,7 @@ export default async function Categories() {
       <div className="mt-9 grid">
         {categories.map((category) => (
           <Link
-            className="inline text-center mb-4 -z-10"
+            className="inline text-center mb-4"
             href={`categories/${category.name}`}
             key={category.id}
           >
